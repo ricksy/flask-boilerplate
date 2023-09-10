@@ -1,4 +1,4 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
 from wtforms.validators import (DataRequired, Length, Email, ValidationError,
                                 EqualTo)
@@ -27,7 +27,7 @@ class Unique(object):
             raise ValidationError(self.message)
 
 
-class Forgot(Form):
+class Forgot(FlaskForm):
 
     ''' User forgot password form. '''
 
@@ -35,7 +35,7 @@ class Forgot(Form):
                       description='Email address')
 
 
-class Reset(Form):
+class Reset(FlaskForm):
 
     ''' User reset password form. '''
 
@@ -46,7 +46,7 @@ class Reset(Form):
     confirm = PasswordField(description='Confirm password')
 
 
-class Login(Form):
+class Login(FlaskForm):
 
     ''' User login form. '''
 
@@ -56,7 +56,7 @@ class Login(Form):
                              description='Password')
 
 
-class SignUp(Form):
+class SignUp(FlaskForm):
 
     ''' User sign up form. '''
 

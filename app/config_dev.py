@@ -24,7 +24,7 @@ MAIL_USE_SSL = True
 MAIL_USERNAME = 'flask.boilerplate'
 MAIL_PASSWORD = 'flaskboilerplate123'
 ADMINS = ['flask.boilerplate@gmail.com']
-
+DEBUG_TB_INTERCEPT_REDIRECTS = False
 # Number of times a password is hashed
 BCRYPT_LOG_ROUNDS = 12
 

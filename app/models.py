@@ -1,5 +1,4 @@
-#from sqlalchemy import hybrid_property
-hybrid_property = property
+from sqlalchemy.ext.hybrid import hybrid_property
 from flask_login import UserMixin
 
 from app import db, bcrypt
@@ -27,8 +26,8 @@ class User(db.Model, UserMixin):
         return self._password
 
     @password.setter
-    def _set_password(self, plaintext):
-        self._password = bcrypt.generate_password_hash(plaintext)
+    def password(self, password):
+        self._password = bcrypt.generate_password_hash(password)
 
     def check_password(self, plaintext):
         return bcrypt.check_password_hash(self.password, plaintext)

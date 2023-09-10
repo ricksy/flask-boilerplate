@@ -13,16 +13,19 @@
 	{% endif %}
 {% endmacro %}
 
-<!-- Render a WTForm form's field (with it's possible associated errors) from a WTForms form -->
+
 {% macro render_field(field) %}
-	<div class="field">
-		{{ field(name_=field.name, id=field.name, placeholder=field.description, class_="field") }}
+<div {% if field.errors %}class="control-group error"{% else %}class="control-group"{% endif %}>
+	{% if field.name != "id" %}
+	<label class="control-label">{{ field.label }}</label>
+	{% endif %}
+	<div class="controls">
+		{{ field(**kwargs)|safe }}
+		{% if field.errors %}
+		{% for error in field.errors %}
+		<span class="help-inline">{{ error }}</span>
+		{% endfor %}
+	{% endif %}
 	</div>
-  	{% if field.errors %}
-    	<ul>
-	    	{% for error in field.errors %}
-	      		<li class="form-error">{{ error }}</li>
-	    	{% endfor %}
-    	</ul>
-  	{% endif %}
+</div>
 {% endmacro %}
