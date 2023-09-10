@@ -89,8 +89,12 @@ virtualenv venv
 source venv/bin/activate (venv\scripts\activate on Windows)
 make install
 make dev
-python manage.py initdb
-python manage.py runserver
+# python manage.py initdb
+# python manage.py runserver
+flask db init
+flask db migrate
+flask db upgrade
+flask run
 ```
 
 
