@@ -1,5 +1,6 @@
-from sqlalchemy.ext.hybrid import hybrid_property
-from flask.ext.login import UserMixin
+#from sqlalchemy import hybrid_property
+hybrid_property = property
+from flask_login import UserMixin
 
 from app import db, bcrypt
 

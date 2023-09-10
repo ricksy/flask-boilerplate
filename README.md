@@ -86,7 +86,7 @@ I did what most people recommend for the application's structure. Basically, eve
 ``
 pip install virtualenv
 virtualenv venv
-venv/bin/activate (venv\scripts\activate on Windows)
+source venv/bin/activate (venv\scripts\activate on Windows)
 make install
 make dev
 python manage.py initdb
