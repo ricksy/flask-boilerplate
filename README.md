@@ -83,7 +83,7 @@ I did what most people recommend for the application's structure. Basically, eve
 
 ### Virtual environment
 
-``
+```bash
 pip install virtualenv
 virtualenv venv
 source venv/bin/activate (venv\scripts\activate on Windows)
@@ -91,7 +91,7 @@ make install
 make dev
 python manage.py initdb
 python manage.py runserver
-``
+```
 
 
 ## Deployment
